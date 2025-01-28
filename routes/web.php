@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CadastroController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,7 @@ use App\Http\Controllers\NotaFiscalController;
 
 Route::get('/nota-fiscal', [NotaFiscalController::class, 'create'])->name('nota-fiscal.create');
 Route::post('/nota-fiscal', [NotaFiscalController::class, 'store'])->name('nota-fiscal.store');
+Route::get('/cadastro', [CadastroController::class, 'show'])->name('cadastro.index');
+Route::get('/',function(){
+    return view('welcome');
+});

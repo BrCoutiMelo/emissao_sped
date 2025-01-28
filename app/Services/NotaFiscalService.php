@@ -1,18 +1,11 @@
 <?php
+namespace App\Services;
 
-namespace App\Http\Controllers;
-
-use App\Services\NotaFiscalService;
 use App\Models\NotaFiscal;
 use Illuminate\Http\Request;
+class NotaFiscalService {
 
-class NotaFiscalController extends Controller
-{
-   
-    public function create(){
-        return view('nota-fiscal');
-    }
-    public function store(Request $request)  {
+    public function CreateNota(Request $request){
         $nota = new NotaFiscal;
         $nota->numero_nf = $request->numero_nf;
         $nota->serie = $request->serie;
